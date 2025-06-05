@@ -28,7 +28,7 @@ function Configuracion() {
       dependencia: dependenciaActual
     };
 
-    await axios.post("http://localhost:8000/guardar_credenciales", payload);
+    await axios.post("https://mod-aut-pjic.onrender.com/guardar_credenciales", payload);
     setMensaje("✔️ Credenciales guardadas correctamente");
   } catch (err) {
     console.error("❌ Error al guardar credenciales:", err);

@@ -27,7 +27,7 @@ function VistaContratos() {
   useEffect(() => {
     const fetchContratos = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/contratos?dependencia=${dependencia}`);
+        const res = await axios.get(`https://mod-aut-pjic.onrender.com/contratos?dependencia=${dependencia}`);
         setContratos(res.data);
       } catch (error) {
         console.error("❌ Error al cargar los contratos:", error);
@@ -43,7 +43,7 @@ function VistaContratos() {
     setProcesando(true);
     setMensaje("");
     try {
-      const res = await axios.post(`http://localhost:8000/automatizar?dependencia=${dependencia}`);
+      const res = await axios.post(`https://mod-aut-pjic.onrender.com/automatizar?dependencia=${dependencia}`);
       setMensaje(res.data.mensaje || "✔️ Automatización finalizada");
     } catch (err) {
       setMensaje("❌ Error al automatizar contratos.");

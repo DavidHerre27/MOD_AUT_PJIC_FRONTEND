@@ -24,7 +24,7 @@ function Historial() {
   const [modalTitulo, setModalTitulo] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:8000/historial")
+    axios.get("https://mod-aut-pjic.onrender.com/historial")
       .then((res) => setHistorial(res.data))
       .catch((err) => console.error("❌ Error al cargar historial", err));
   }, []);
@@ -77,7 +77,7 @@ function Historial() {
 
   const verDetalleArchivo = async (dependencia, archivo) => {
   try {
-    const res = await axios.get(`http://localhost:8000/ver_archivo_excel?dependencia=${dependencia}&archivo=${archivo}`);
+    const res = await axios.get(`https://mod-aut-pjic.onrender.com/ver_archivo_excel?dependencia=${dependencia}&archivo=${archivo}`);
     setDetalleContrato(res.data);
     setModalTitulo(`Contratos procesados en ${archivo}`);
     setOpenModal(true);
@@ -173,7 +173,7 @@ function Historial() {
                     </IconButton>
                     {row.archivo_pdf && (
                       <a
-                        href={`http://localhost:8000/descargar_informe?dependencia=${row.dependencia}&archivo_pdf=${row.archivo_pdf}`}
+                        href={`https://mod-aut-pjic.onrender.com/descargar_informe?dependencia=${row.dependencia}&archivo_pdf=${row.archivo_pdf}`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

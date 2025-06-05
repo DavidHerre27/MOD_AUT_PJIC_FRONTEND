@@ -30,7 +30,7 @@ function Home() {
       if (!archivoSubido) return;
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:8000/contratos", {
+        const res = await axios.get("https://mod-aut-pjic.onrender.com/contratos", {
           params: { dependencia, archivo: archivoSubido },
         });
         console.log("✅ Contratos recibidos:", res.data);
@@ -54,7 +54,7 @@ function Home() {
 
     setLoading(true);
     try {
-      const res = await axios.post(`http://localhost:8000/subir_excel?dependencia=${dependencia}`, formData, {
+      const res = await axios.post(`https://mod-aut-pjic.onrender.com/subir_excel?dependencia=${dependencia}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -81,7 +81,7 @@ function Home() {
     try {
       const usuario = localStorage.getItem("usuario") || "Desconocido";
       const res = await axios.post(
-        `http://localhost:8000/automatizar?dependencia=${dependencia}&archivo=${archivoSubido}&usuario=${usuario}`
+        `https://mod-aut-pjic.onrender.com/automatizar?dependencia=${dependencia}&archivo=${archivoSubido}&usuario=${usuario}`
       );
       setMensaje(res.data.mensaje || "✔️ Automatización finalizada");
     } catch (error) {

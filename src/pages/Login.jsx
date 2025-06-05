@@ -19,7 +19,7 @@ function Login() {
   data.append("password", clave);
 
   try {
-    const res = await axios.post("http://localhost:8000/token", data);
+    const res = await axios.post("https://mod-aut-pjic.onrender.com/token", data);
 
     const {
       access_token,
