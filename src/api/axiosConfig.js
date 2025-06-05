@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://66aa-2800-e2-1100-f43-b840-537b-aa8d-d24d.ngrok-free.app",
+  baseURL: "https://mod-aut-pjic.onrender.com",
 });
 
 instance.interceptors.request.use((config) => {
